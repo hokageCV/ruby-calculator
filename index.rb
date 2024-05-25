@@ -1,9 +1,16 @@
-require './handle_operation_input'
 require './process_result'
-require './argument_handler'
+require './input_handler'
 
-num1, num2 = ArgumentHandler.validate
-selected_operation = HandleOperationInput.get_selected_operation
-result = ProcessResult.get_result(num1, num2, selected_operation)
+continue = 'y'
 
-puts "#{num1} #{selected_operation} #{num2} = #{result}\n\n"
+while continue == 'y'
+  num1, num2 = InputHandler.input_numbers
+  selected_operation = InputHandler.input_operator_options
+  result = ProcessResult.get_result(num1, num2, selected_operation)
+
+  puts "\n#{num1} #{selected_operation} #{num2} = #{result}\n"
+
+  puts 'continue?'
+  continue = $stdin.gets.chomp.downcase
+end
+
