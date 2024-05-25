@@ -1,9 +1,7 @@
-puts 'RASENtarengan'
+require './handle_operation_input'
+allowed_operations = ['+', '-', '*', '/']
 
-command_line_arg = ARGV[0]
+num1 = ARGV[0]
+selected_operation = HandleOperationInput.get_selected_operation
 
-print 'Enter something: '
-user_input = $stdin.gets.chomp
-
-puts "Argument 1: #{command_line_arg}"
-puts "Argument 2: #{user_input}"
+puts "\nArgument 1: #{num1}\n\n"
