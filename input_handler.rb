@@ -8,6 +8,13 @@ module InputHandler
     [num1.to_i, num2.to_i]
   end
 
+  def self.input_second_number
+    print 'Enter 2nd number: '
+    num2 = $stdin.gets.chomp
+
+    num2.to_i
+  end
+
   def self.display_operator_options
     puts '1: add'
     puts '2: subtract'
