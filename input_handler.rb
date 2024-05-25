@@ -1,18 +1,19 @@
 module InputHandler
-  def self.input_numbers
-    print 'Enter 1st number: '
-    num1 = $stdin.gets.chomp
-    print 'Enter 2nd number: '
-    num2 = $stdin.gets.chomp
+  def self.input_numbers(num1)
+    if num1.nil?
+      print 'Enter 1st number: '
+      num1 = $stdin.gets.chomp
+      print 'Enter 2nd number: '
+      num2 = $stdin.gets.chomp
 
-    [num1.to_i, num2.to_i]
-  end
+      [num1.to_i, num2.to_i]
+    else
+      puts "\n1st number: #{num1}"
+      print 'Enter 2nd number: '
+      num2 = $stdin.gets.chomp
 
-  def self.input_second_number
-    print 'Enter 2nd number: '
-    num2 = $stdin.gets.chomp
-
-    num2.to_i
+      [num1.to_i, num2.to_i]
+    end
   end
 
   def self.display_operator_options
